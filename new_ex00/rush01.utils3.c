@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush01.utils.c                                     :+:      :+:    :+:   */
+/*   rush01.utils3.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: quentindebrabant <quentindebrabant@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/13 15:41:15 by qdebraba          #+#    #+#             */
-/*   Updated: 2025/09/14 15:32:51 by quentindebr      ###   ########.fr       */
+/*   Created: 2025/09/14 15:23:32 by quentindebr       #+#    #+#             */
+/*   Updated: 2025/09/14 15:32:58 by quentindebr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,16 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int		ft_isdigit(int c);
-int		catch_square(int number);
-void	free_tab_clues(int **a, int n);
-
-int	**ft_malloc_tab(int n)
+int	**ft_malloc_tab_clues(int n)
 {
 	int	i;
 	int	**a;
 
 	i = 0;
-	a = malloc(sizeof(int *) * (n + 1));
+	a = malloc(sizeof(int *) * (5));
 	if (!a)
 		return (NULL);
-	while (i < n)
+	while (i < 4)
 	{
 		a[i] = malloc(sizeof(int) * (n + 1));
 		if (!a[i])
@@ -40,17 +36,17 @@ int	**ft_malloc_tab(int n)
 		a[i][n] = -1;
 		i++;
 	}
-	a[n] = NULL;
+	a[4] = NULL;
 	return (a);
 }
 
-void	fill_tab(int **a, int n)
+void	fill_tab_clues(int **a, int n)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < n)
+	while (i < 4)
 	{
 		j = 0;
 		while (j < n)
@@ -62,42 +58,15 @@ void	fill_tab(int **a, int n)
 	}
 }
 
-int	count_lines(int **a)
-{
-	int	i;
-	int	j;
-	int	count;
-
-	i = 0;
-	count = 0;
-	while (a[i] != NULL)
-	{
-		j = 0;
-		while (a[i][j] != -1)
-		{
-			j++;
-			count++;
-		}
-		i++;
-	}
-	return (catch_square(count));
-}
-
-void	free_tab(int **a, int n)
+void	free_tab_clues(int **a, int n)
 {
 	int	i;
 
 	i = 0;
-	while (i <= n)
+	while (i < 4)
 	{
 		free(a[i]);
 		i++;
 	}
 	free(a);
-}
-
-void	free_all(int **a, int **b, int n)
-{
-	free_tab_clues(a, n);
-	free_tab(b, n);
 }

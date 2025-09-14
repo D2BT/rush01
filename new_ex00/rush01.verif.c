@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush01.verif.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qdebraba <qdebraba@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentindebrabant <quentindebrabant@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 20:38:27 by qdebraba          #+#    #+#             */
-/*   Updated: 2025/09/13 16:43:42 by qdebraba         ###   ########.fr       */
+/*   Updated: 2025/09/14 15:50:56 by quentindebr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,27 +107,27 @@ int	c_b(int **a, int **b, int c, int n)
 	return (0);
 }
 
-int	verif(int **tab, int **clues, int r, int c)
+int	verif(int **clues, int **tab, int r, int c)
 {
 	int	result;
 	int	n;
 
 	n = count_lines(tab);
-	if (c == 3)
+	if (c == n - 1)
 	{
-		result = r_l(tab, clues, r, n);
+		result = r_l(clues, tab, r, n);
 		if (result == 0)
 			return (0);
-		result = r_r(tab, clues, r, n);
+		result = r_r(clues, tab, r, n);
 		if (result == 0)
 			return (0);
 	}
-	if (r == 3)
+	if (r == n - 1)
 	{
-		result = c_t(tab, clues, c, n);
+		result = c_t(clues, tab, c, n);
 		if (result == 0)
 			return (0);
-		result = c_b(tab, clues, c, n);
+		result = c_b(clues, tab, c, n);
 		if (result == 0)
 			return (0);
 	}
