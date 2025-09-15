@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush01.utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentindebrabant <quentindebrabant@stud    +#+  +:+       +#+        */
+/*   By: qdebraba <qdebraba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 15:41:15 by qdebraba          #+#    #+#             */
-/*   Updated: 2025/09/14 15:32:51 by quentindebr      ###   ########.fr       */
+/*   Updated: 2025/09/15 13:45:29 by qdebraba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int		ft_isdigit(int c);
 int		catch_square(int number);
-void	free_tab_clues(int **a, int n);
+void	free_tab_clues(int **a);
 
 int	**ft_malloc_tab(int n)
 {
@@ -98,6 +98,6 @@ void	free_tab(int **a, int n)
 
 void	free_all(int **a, int **b, int n)
 {
-	free_tab_clues(a, n);
+	free_tab_clues(a);
 	free_tab(b, n);
 }

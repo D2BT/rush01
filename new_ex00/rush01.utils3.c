@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush01.utils3.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentindebrabant <quentindebrabant@stud    +#+  +:+       +#+        */
+/*   By: qdebraba <qdebraba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 15:23:32 by quentindebr       #+#    #+#             */
-/*   Updated: 2025/09/14 15:32:58 by quentindebr      ###   ########.fr       */
+/*   Updated: 2025/09/15 13:45:04 by qdebraba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	fill_tab_clues(int **a, int n)
 	}
 }
 
-void	free_tab_clues(int **a, int n)
+void	free_tab_clues(int **a)
 {
 	int	i;
 
